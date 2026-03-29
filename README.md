@@ -9,10 +9,109 @@ To write a program to predict the price of cars using a multiple linear regressi
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+
+1. **Start**
+
+2. **Import Libraries**
+
+   * Import required libraries:
+
+     * `pandas`, `numpy`
+     * `train_test_split`, `cross_val_score`
+     * `LinearRegression`
+     * Evaluation metrics (`MSE`, `MAE`, `R²`)
+     * `matplotlib` for visualization
+
+3. **Load Dataset**
+
+   * Read the dataset `CarPrice_Assignment.csv` into a DataFrame
+
+4. **Data Preprocessing**
+
+   * Remove unnecessary columns:
+
+     * Drop `car_ID` and `CarName`
+   * Convert categorical variables into numerical format:
+
+     * Apply one-hot encoding using `pd.get_dummies()`
+     * Use `drop_first=True` to avoid dummy variable trap
+
+5. **Define Features and Target**
+
+   * Separate input features `X` (all columns except `price`)
+   * Define target variable `y` (`price`)
+
+6. **Split Dataset**
+
+   * Divide data into:
+
+     * Training set (80%)
+     * Testing set (20%)
+   * Use `random_state = 42` for consistency
+
+---
+
+### **Model Training**
+
+7. **Create Linear Regression Model**
+
+   * Initialize `LinearRegression`
+
+8. **Train Model**
+
+   * Fit the model using training data (`X_train`, `y_train`)
+
+---
+
+### **Cross-Validation**
+
+9. **Perform Cross-Validation**
+
+   * Apply 5-fold cross-validation using `cross_val_score()`
+   * Compute R² score for each fold
+
+10. **Display Cross-Validation Results**
+
+* Print:
+
+  * R² scores for all folds
+  * Average R² score
+
+---
+
+### **Model Evaluation (Test Set)**
+
+11. **Make Predictions**
+
+* Predict target values using test data (`X_test`)
+
+12. **Calculate Performance Metrics**
+
+* Compute:
+
+  * Mean Squared Error (MSE)
+  * Mean Absolute Error (MAE)
+  * R² Score
+* Display results
+
+---
+
+### **Visualization**
+
+13. **Plot Actual vs Predicted Values**
+
+* Create scatter plot:
+
+  * X-axis → Actual prices (`y_test`)
+  * Y-axis → Predicted prices (`y_pred`)
+* Draw reference line (perfect prediction)
+* Add labels and title
+
+14. **Display Plot**
+
+---
+
+15. **End**
 
 ## Program:
 ```
